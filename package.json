@@ -1,0 +1,16 @@
+{
+  "name": "pluto-sprity",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack --config webpack.config.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  }
+}
