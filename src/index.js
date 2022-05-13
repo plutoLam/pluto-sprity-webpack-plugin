@@ -1,4 +1,6 @@
 const chokidar = require("chokidar");
+
+const { name: pluginName } = require("../package.json");
 class plutoSprityPlugin {
 	constructor(options) {
 		this._options = options;
@@ -18,7 +20,7 @@ class plutoSprityPlugin {
 		}
 	}
 	apply(compiler) {
-		compiler.hooks.run.tap("pluto-sprity-plugin", compilation => {
+		compiler.hooks.run.tap(pluginName, compilation => {
 			console.log("生命周期run");
 			this.getWatcher();
 			this.generateSprite(() => {
@@ -26,7 +28,7 @@ class plutoSprityPlugin {
 			});
 		});
 
-		compiler.hooks.watchRun.tap("pluto-sprity-plugin", compiler => {
+		compiler.hooks.watchRun.tap(pluginName, compiler => {
 			console.log("生命周期watchRun");
 			this.getWatcher(() => { // 第一次编译时，有几个文件他就调用几次，所以第一次编译时不能执行回调函数
 				console.log("文件发生变动，重新生成精灵图");

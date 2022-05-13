@@ -1,5 +1,5 @@
 {
-  "name": "pluto-sprity",
+  "name": "pluto-sprity-webpack-plugin",
   "version": "0.0.1",
   "description": "",
   "main": "src/index.js",
