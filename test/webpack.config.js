@@ -21,9 +21,11 @@ module.exports = {
 		// new CleanWebpackPlugin(),
 		new plutoSprityPlugin(
 			{
-				glob: "**/assets/img/sprite/*.png",
+				glob: "assets/img/sprite/*.png",
 				cwd: path.resolve(__dirname, "src"),
-				options: {}
+				target:{
+					css:"assets/css/sprite.css"
+				}
 			}) // 使用我们的plugin
 	]
 };
