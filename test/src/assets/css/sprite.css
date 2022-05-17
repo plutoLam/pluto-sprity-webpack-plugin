@@ -16,26 +16,26 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 // HTML
 <i class="icon icon-home"></i>
 */
-.icon-red.png {
-  background-image: url(D:\1-front-end\netease\pluto-sprity-plugin\test\src\assets\img\sprite.png);
+.icon-red {
+  background-image: url(..\img\sprite.png);
   background-position: 0px -34px;
   width: 17px;
   height: 17px;
 }
-.icon-red@2x.png {
-  background-image: url(D:\1-front-end\netease\pluto-sprity-plugin\test\src\assets\img\sprite.png);
+.icon-red2x {
+  background-image: url(..\img\sprite.png);
   background-position: 0px 0px;
   width: 34px;
   height: 34px;
 }
-.icon-turquoise.png {
-  background-image: url(D:\1-front-end\netease\pluto-sprity-plugin\test\src\assets\img\sprite.png);
+.icon-turquoise {
+  background-image: url(..\img\sprite.png);
   background-position: -17px -34px;
   width: 17px;
   height: 17px;
 }
-.icon-turquoise@2x.png {
-  background-image: url(D:\1-front-end\netease\pluto-sprity-plugin\test\src\assets\img\sprite.png);
+.icon-turquoise2x {
+  background-image: url(..\img\sprite.png);
   background-position: -34px 0px;
   width: 34px;
   height: 34px;

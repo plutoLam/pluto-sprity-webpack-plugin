@@ -15,7 +15,7 @@
   \***********************/
 /***/ (() => {
 
-eval("function add(a, b) {\r\n\treturn a + b;\r\n}\r\nadd(1, 2);\r\n\r\nconsole.log(\"hello world 123 \");\n\n//# sourceURL=webpack://pluto-sprity-webpack-plugin/./test/index.js?");
+eval("console.log(123);\n\n//# sourceURL=webpack://pluto-sprity-webpack-plugin/./test/index.js?");
 
 /***/ })
 

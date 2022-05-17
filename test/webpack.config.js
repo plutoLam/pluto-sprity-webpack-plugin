@@ -23,8 +23,8 @@ module.exports = {
 			{
 				glob: "assets/img/sprite/*.png",
 				cwd: path.resolve(__dirname, "src"),
-				target:{
-					css:"assets/css/sprite.css"
+				target: {
+					css: "assets/css/sprite.css"
 				}
 			}) // 使用我们的plugin
 	]
