@@ -36,7 +36,7 @@ npm i pluto-sprity-webpack-plugin
 
 ### 使用
 
-```javascript
+```js
 const path = require("path");
 const plutoSprityPlugin = require("pluto-sprity-webpack-plugin");
 
@@ -56,11 +56,16 @@ module.exports = {
 };
 ```
 配置：
-glob（必选）：使用glob规则匹配文件，详情见[https://www.npmjs.com/package/glob](https://www.npmjs.com/package/glob)
+glob（必选）：使用glob规则匹配文件，详情见[glob](https://www.npmjs.com/package/glob)
+
 cwd（必选）：根目录，插件根据根目录匹配文件
+
 target（可选）：
-css：最终生成css的文件（会自动生成目录）
-img：最终生成精灵图的文件
+
+	css：最终生成css的文件（会自动生成目录）
+
+	img：最终生成精灵图的文件
+
 
 
 

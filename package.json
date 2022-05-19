@@ -1,6 +1,6 @@
 {
   "name": "pluto-sprity-webpack-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "一个用于生成精灵图的webpack插件",
   "main": "src/index.js",
   "repository": {
