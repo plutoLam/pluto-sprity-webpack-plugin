@@ -1105,6 +1105,19 @@ pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
+pluto-sprity-webpack-plugin@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/pluto-sprity-webpack-plugin/-/pluto-sprity-webpack-plugin-0.0.1.tgz#bf28bd35807563cb6a753305558daf2d9dafec41"
+  integrity sha512-ZhDTiP8WcLTgPh5cP8mSf3FiOsFBqU+IJO09GOxm79oVUX9YGi23+0bsWbpf/jluXDiCD5wl5PaveFl/H1oloQ==
+  dependencies:
+    chokidar "^3.5.3"
+    glob "^8.0.3"
+    mkdirp "^1.0.4"
+    spritesheet-templates "^10.5.2"
+    spritesmith "^3.4.0"
+    webpack "^5.72.1"
+    webpack-cli "^4.9.2"
+
 pngjs-nozlib@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/pngjs-nozlib/-/pngjs-nozlib-1.0.0.tgz#9e64d602cfe9cce4d9d5997d0687429a73f0b7d7"
