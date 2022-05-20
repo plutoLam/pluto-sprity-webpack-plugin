@@ -56,15 +56,12 @@ module.exports = {
 };
 ```
 配置：
-glob（必选）：使用glob规则匹配文件，详情见[glob](https://www.npmjs.com/package/glob)
 
-cwd（必选）：根目录，插件根据根目录匹配文件
-
-target（可选）：
-
-	css：最终生成css的文件（会自动生成目录）
-
-	img：最终生成精灵图的文件
+| 参数           | 配置                                                         |
+| -------------- | ------------------------------------------------------------ |
+| glob（必选）   | 使用glob规则匹配文件，详情见[glob](https://www.npmjs.com/package/glob) |
+| cwd（必选）    | 根目录，插件根据根目录匹配文件                               |
+| target（可选） | css：最终生成css的文件（会自动生成目录）<br/>img：最终生成精灵图的文件 |
 
 
 
