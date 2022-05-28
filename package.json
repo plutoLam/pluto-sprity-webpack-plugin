@@ -34,9 +34,11 @@
     "chokidar": "^3.5.3",
     "glob": "^8.0.3",
     "mkdirp": "^1.0.4",
-    "pluto-sprity-webpack-plugin": "^0.0.1",
     "spritesheet-templates": "^10.5.2",
-    "spritesmith": "^3.4.0",
+    "spritesmith": "^3.4.0"
+  },
+  "devDependencies": {
+    "pluto-sprity-webpack-plugin": "^0.0.3",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2"
   }

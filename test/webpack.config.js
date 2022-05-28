@@ -1,5 +1,5 @@
 const path = require("path");
-const plutoSprityPlugin = require("pluto-sprity-webpack-plugin");
+const plutoSprityPlugin = require("../src/index");
 
 module.exports = {
 	mode: "development",
