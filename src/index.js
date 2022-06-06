@@ -3,7 +3,7 @@ const path = require("path");
 const { name: pluginName } = require("../package.json");
 const templater = require("spritesheet-templates");
 
-const { getPaths, spritesmithRun, writrFile } = require("./util");
+const { getPaths, spritesmithRun, writrFile, Debounce } = require("./util");
 class plutoSprityPlugin {
 	constructor(options) {
 		this._options = options;
@@ -30,17 +30,21 @@ class plutoSprityPlugin {
 	}
 	apply(compiler) {
 		compiler.hooks.run.tap(pluginName, compiler => {
-			this.generateSprite();
+			Debounce(() => {
+				this.generateSprite();
+			}, 500);
 		});
 
 		compiler.hooks.watchRun.tap(pluginName, compiler => {
-			this.getWatcher(() => { // 第一次编译时，有几个文件他就调用几次，所以第一次编译时不能执行回调函数
+			this.getWatcher(Debounce(() => {
 				this.generateSprite();
-			});
+			}, 2000));
+			// 第一次编译时，有几个文件他就调用几次，所以第一次编译时不能执行回调函数
 			return this.generateSprite();
 		});
 	}
 	async generateSprite(cb) {
+		console.log("generateSprite: ", this._options);
 		const paths = await getPaths(this._options.glob, this._options.cwd);
 		const sourcePaths = paths.map(v => path.resolve(this._options.cwd, v));
 		const spritesRes = await spritesmithRun(sourcePaths);

@@ -43,7 +43,16 @@ async function writrFile(dir, image) {
 	});
 }
 
+function Debounce(fn, delay = 50) {
+	let timer;
+	return function(...args) {
+		timer && clearTimeout(timer);
+		timer = setTimeout(() => fn(...args), delay);
+	};
+}
+
 module.exports = {
+	Debounce,
 	getPaths,
 	spritesmithRun,
 	writrFile
