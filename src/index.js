@@ -40,7 +40,7 @@ class plutoSprityPlugin {
 			return this.generateSprite();
 		});
 	}
-	async generateSprite(cb) {
+	async generateSprite() {
 		const paths = await getPaths(this._options.glob, this._options.cwd);
 		const sourcePaths = paths.map(v => path.resolve(this._options.cwd, v));
 		const spritesRes = await spritesmithRun(sourcePaths);
