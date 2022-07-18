@@ -14,7 +14,8 @@ module.exports = {
 		new plutoSprityPlugin(
 			{
 				glob: "assets/img/sprite/*.png",
-				cwd: path.resolve(__dirname, "src")
+				cwd: path.resolve(__dirname, "src"),
+				compressCss:false
 			})
 	]
 };

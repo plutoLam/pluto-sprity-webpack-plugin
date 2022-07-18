@@ -2,8 +2,9 @@ const chokidar = require("chokidar");
 const path = require("path");
 const { name: pluginName } = require("../package.json");
 const templater = require("spritesheet-templates");
+const CleanCSS = require('clean-css');
 
-const { getPaths, spritesmithRun, writrFile } = require("./util");
+const { getPaths, spritesmithRun, writrFile, Debounce } = require("./util");
 class plutoSprityPlugin {
 	constructor(options) {
 		this._options = options;
@@ -34,13 +35,15 @@ class plutoSprityPlugin {
 		});
 
 		compiler.hooks.watchRun.tap(pluginName, compiler => {
-			this.getWatcher(() => { // 第一次编译时，有几个文件他就调用几次，所以第一次编译时不能执行回调函数
+			this.getWatcher(Debounce(() => {
 				this.generateSprite();
-			});
+			}, 500));
+			// 第一次编译时，有几个文件他就调用几次，所以第一次编译时不能执行回调函数
 			return this.generateSprite();
 		});
 	}
 	async generateSprite() {
+		console.log('generateSprite');
 		const paths = await getPaths(this._options.glob, this._options.cwd);
 		const sourcePaths = paths.map(v => path.resolve(this._options.cwd, v));
 		const spritesRes = await spritesmithRun(sourcePaths);
@@ -65,7 +68,7 @@ class plutoSprityPlugin {
 				image: cssToImg // css文件中读取精灵图的路径
 			}
 		});
-		await writrFile(cssPath, templaterRes);
+		await writrFile(cssPath, this._options.compressCss ? new CleanCSS(this._options.cssOptions).minify(templaterRes).styles : templaterRes);
 	}
 }
 
